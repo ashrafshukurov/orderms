@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 @FeignClient(name = "customer",url = "http://localhost:8081")
 public interface CustomerClient {
-   @GetMapping(value = "/{id}")
+   @GetMapping(value = "/customer/{id}")
    CustomerClientResponse getCustomerById(@PathVariable("id") Long id);
    @GetMapping("/dec/{id}/{amount}")
    boolean decreaseBalance(@PathVariable Long id,@PathVariable double amount);

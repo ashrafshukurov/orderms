@@ -38,10 +38,14 @@ public class OrderServiceImpl implements OrderService {
             ProductClientResponse productResponse=productClient.getProductByID(productId);
             log.info("customer is searching");
             CustomerClientResponse customerResponse=customerClient.getCustomerById(customerId);
+            log.info("1");
             int productCount=productResponse.getCount();
+            log.info("2");
             double price=productResponse.getPrice();
+            log.info("3");
           boolean a= productClient.decreaseCountByCount(productId,Count);
-          boolean c= customerClient.decreaseBalance(customerId,productCount*price);
+          log.info("4");;
+          boolean c= customerClient.decreaseBalance(customerId,Count*price);
           if(a){
               if(c){
                   Order order= Order.builder()

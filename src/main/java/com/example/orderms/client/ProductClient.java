@@ -13,8 +13,9 @@ public interface ProductClient {
     @GetMapping("{id}")
     ProductClientResponse getProductByID(@PathVariable("id") Long id);
 
-    @GetMapping("dec/{id}/{count}")
-    boolean decreaseCountByCount(@PathVariable("id") Long id,int count);
-    @GetMapping("inc/{id}/{count}")
-    void increaseCountByCount(@PathVariable Long id,int count);
+    @GetMapping("/dec/{id}/{count}")
+    boolean decreaseCountByCount(@PathVariable("id") Long id,@PathVariable("count") int count);
+
+    @GetMapping("/inc/{id}/{count}")
+    void increaseCountByCount(@PathVariable Long id,@PathVariable("count") int count);
 }

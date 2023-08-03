@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 public interface CustomerClient {
    @GetMapping(value = "/{id}")
    CustomerClientResponse getCustomerById(@PathVariable("id") Long id);
-   @GetMapping("/{id}/{amount}")
+   @GetMapping("/dec/{id}/{amount}")
    boolean decreaseBalance(@PathVariable Long id,@PathVariable double amount);
-   @GetMapping("/{id}/{amount}")
-   void increaseBalance(@PathVariable Long id,@PathVariable double amount);
+   @GetMapping("/inc/{id}/{amount}")
+   boolean increaseBalance(@PathVariable Long id,@PathVariable double amount);
 }

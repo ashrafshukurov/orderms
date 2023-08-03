@@ -34,6 +34,8 @@ public class OrderController {
     public ResponseEntity<ProductClientResponse> getProduct(@PathVariable Long id){
         return ResponseEntity.ok(productClient.getProductByID(id));
     }
+//    @GetMapping("/")
+
 
 
 }
